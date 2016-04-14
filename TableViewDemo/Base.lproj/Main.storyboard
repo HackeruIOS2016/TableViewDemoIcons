@@ -69,6 +69,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="HRt-ta-nKO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="AwW-Cx-MOu">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oo7-d2-g4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

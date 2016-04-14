@@ -23,9 +23,19 @@ class IconsTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
     }
  
+    func refresh(sender:UIRefreshControl){
+        icons.removeAll()
+        icons.append(IconDataSource().summerSet())
+        icons.append(IconDataSource().winterSet())
+        tableView.reloadData()
+        
+        sender.endRefreshing()
+    }
 
     // MARK: - Table view data source
 
