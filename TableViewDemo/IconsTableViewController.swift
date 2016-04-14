@@ -125,15 +125,28 @@ class IconsTableViewController: UITableViewController {
         return true
     }
     
-
-    /*
+    
+    //on click listener for the row (with indexPath!)
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let section =  indexPath.section
+        let row = indexPath.row
+        
+        let icon = icons[section][row]
+        
+        performSegueWithIdentifier("masterToDetail", sender: icon)
+    }
+  
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
+        // Get the new view controller using 
+        if let dest = segue.destinationViewController as? DetailViewController{
+            dest.data = (sender as! Icon)
+        }
         // Pass the selected object to the new view controller.
     }
-    */
+ 
 
 }
